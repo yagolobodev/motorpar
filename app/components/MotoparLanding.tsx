@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
 import {
     Phone,
     Mail,
@@ -28,6 +29,7 @@ import {
     WrenchIcon,
     Settings2,
     Hammer,
+    MessageSquare,
 } from 'lucide-react';
 
 // Interfaces
@@ -460,7 +462,7 @@ const MotoparLanding: React.FC = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []); // a linha 464 é essa
+    }, []); 
 
     return (
         <div className="min-h-screen">
@@ -525,48 +527,47 @@ const MotoparLanding: React.FC = () => {
                 </motion.header>
             )}
 
-            {/* Hero Section com Video Background */}
-            <section className="relative min-h-screen bg-[#221E1F] text-white flex items-center">
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
                 <VideoBackground />
-                <div className="relative z-10 container mx-auto px-4 py-24">
-                    <motion.div
-                        className="max-w-3xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
+                <div className="container mx-auto px-4 z-10">
+                    <div className="max-w-4xl mx-auto text-center">
                         <motion.h1
-                            className="text-5xl md:text-7xl font-bold mb-6"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
+                            variants={fadeInUp}
+                            className="text-4xl md:text-6xl font-bold mb-6"
                         >
-                            A Retífica
-                            <motion.span
-                                className="text-[#FFF100] block"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.5 }}
-                            >
-                                Referência em Tecnologia
-                            </motion.span>
+                            Somos Referência em{' '}
+                            <span className="block mt-2">
+                                <TypeAnimation
+                                    sequence={[
+                                        'Usinagem de Precisão',
+                                        2000,
+                                        'Mecânica e Montagem Especializada',
+                                        2000,
+                                        'Retífica de Bombas Injetoras Diesel',
+                                        2000,
+                                    ]}
+                                    wrapper="span"
+                                    speed={50}
+                                    repeat={Infinity}
+                                    className="text-yellow-400"
+                                />
+                            </span>
                         </motion.h1>
                         <motion.p
-                            className="text-xl md:text-2xl text-gray-300 mb-8"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.7 }}
+                            variants={fadeInUp}
+                            className="text-gray-300 text-lg"
                         >
-                            Há mais de 40 anos entregando excelência em retífica de motores
-                            com a mais alta tecnologia do mercado.
+                            Mais de 40 anos de experiência em retífica de motores com a mais alta tecnologia do mercado.
                         </motion.p>
                         <motion.div
-                            className="flex flex-col sm:flex-row gap-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.9 }}
+                            variants={stagger}
+                            className="flex flex-col sm:flex-row gap-4 mt-8 justify-center"
+                            initial="initial"
+                            animate="animate"
                         >
                             <motion.a
+                                variants={fadeInUp}
                                 href="#contato"
                                 className="bg-[#FFF100] text-[#221E1F] px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 shadow-lg flex items-center justify-center group"
                                 whileHover={{ scale: 1.05 }}
@@ -576,6 +577,7 @@ const MotoparLanding: React.FC = () => {
                                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                             </motion.a>
                             <motion.a
+                                variants={fadeInUp}
                                 href="#servicos"
                                 className="border-2 border-[#FFF100] text-[#FFF100] px-8 py-4 rounded-lg font-bold hover:bg-[#FFF100] hover:text-[#221E1F] transition flex items-center justify-center"
                                 whileHover={{ scale: 1.05 }}
@@ -584,22 +586,7 @@ const MotoparLanding: React.FC = () => {
                                 Conheça Nossos Serviços
                             </motion.a>
                         </motion.div>
-                    </motion.div>
-                    <motion.div
-                        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.2 }}
-                    >
-                        <motion.div
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                            className="text-center"
-                        >
-                            <ChevronRight className="w-8 h-8 rotate-90 text-[#FFF100]" />
-                            <span className="text-sm text-gray-400">Role para descobrir mais</span>
-                        </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -715,10 +702,10 @@ const MotoparLanding: React.FC = () => {
                                     <img
                                         src={lab.image}
                                         alt={lab.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#221E1F] via-transparent to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="flex items-center mb-3">
                                             <div className="w-10 h-10 bg-[#FFF100] rounded-full flex items-center justify-center mr-3">
                                                 {lab.icon}
@@ -872,7 +859,7 @@ const MotoparLanding: React.FC = () => {
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="absolute inset-0 p-6 flex flex-col justify-end text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <h3 className="text-xl font-bold mb-2">{trabalho.title}</h3>
                                         <p className="text-sm text-gray-200">{trabalho.description}</p>
                                         <button className="mt-4 text-[#FFF100] flex items-center text-sm">
@@ -1055,20 +1042,13 @@ const MotoparLanding: React.FC = () => {
                                         href="https://wa.me/5544998377117?text=Olá! Gostaria de solicitar um orçamento para retífica de motor."
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition transform w-full"
+                                        className="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 shadow-lg group"
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
-                                        <svg
-                                            className="w-6 h-6 fill-current mr-2"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.94 5.86L2.87 22l4.14-1.07C8.68 21.62 10.3 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.74 0-3.41-.47-4.87-1.35l-.35-.21-3.65.96.97-3.65-.22-.35C2.97 14.33 2.5 13.23 2.5 12 2.5 6.76 6.76 2.5 12 2.5S21.5 6.76 21.5 12 17.24 21.5 12 21.5z" />
-                                        </svg>
-                                        Iniciar Conversa
+                                        <MessageSquare className="w-5 h-5 mr-2" />
+                                        WhatsApp
                                     </motion.a>
-
                                     <p className="text-sm text-gray-500">
                                         Clique no botão acima para iniciar uma conversa no WhatsApp
                                     </p>
@@ -1213,6 +1193,11 @@ const MotoparLanding: React.FC = () => {
                                         icon: <MapPin className="w-5 h-5" />,
                                         info: "Rua Estados Unidos, 1035",
                                         subInfo: "Jardim Internorte - Maringá/PR"
+                                    },
+                                    {
+                                        icon: <MessageSquare className="w-5 h-5" />,
+                                        info: "(44) 99837-7117",
+                                        subInfo: "Atendimento via WhatsApp"
                                     }
                                 ].map((item, index) => (
                                     <motion.li
@@ -1265,7 +1250,7 @@ const MotoparLanding: React.FC = () => {
                     <div className="container mx-auto px-4 py-6">
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <p className="text-gray-400 text-sm">
-                                © {new Date().getFullYear()} Motopar Retífica de Motores. Todos os direitos reservados.
+                                &copy; {new Date().getFullYear()} Motopar Retífica de Motores. Todos os direitos reservados.
                             </p>
                             <div className="flex space-x-6 mt-4 md:mt-0">
                                 <a href="#" className="text-gray-400 hover:text-[#FFF100] text-sm transition">
@@ -1294,13 +1279,7 @@ const MotoparLanding: React.FC = () => {
                     whileTap={{ scale: 0.9 }}
                     className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition group"
                 >
-                    <svg
-                        className="w-6 h-6 fill-current"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.94 5.86L2.87 22l4.14-1.07C8.68 21.62 10.3 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.74 0-3.41-.47-4.87-1.35l-.35-.21-3.65.96.97-3.65-.22-.35C2.97 14.33 2.5 13.23 2.5 12 2.5 6.76 6.76 2.5 12 2.5S21.5 6.76 21.5 12 17.24 21.5 12 21.5z" />
-                    </svg>
+                    <MessageSquare className="w-6 h-6" />
                 </motion.div>
             </motion.a>
 
