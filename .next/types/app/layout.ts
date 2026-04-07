@@ -1,4 +1,4 @@
-// File: /Users/yagolobo/Documents/GitHub/motorpar/app/layout.tsx
+// File: C:\Users\USER\Documents\GitHub\motorpar\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

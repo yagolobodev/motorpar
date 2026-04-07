@@ -1,7 +1,10 @@
-/** @type {import('next').Config} */
+/** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  // outras configurações que você tinha
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = config;

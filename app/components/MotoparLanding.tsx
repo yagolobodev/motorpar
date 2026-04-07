@@ -209,7 +209,7 @@ const testimonials: TestimonialType[] = [
         company: "Transportadora Silva",
         role: "Diretor de Frotas",
         text: "A Motopar superou todas as expectativas. Minha frota está operando com máxima eficiência após a retífica. O atendimento e profissionalismo da equipe são excepcionais.",
-        image: "/testimonial1.jpg",
+        image: "https://randomuser.me/api/portraits/men/32.jpg",
         rating: 5
     },
     {
@@ -217,7 +217,7 @@ const testimonials: TestimonialType[] = [
         company: "Agro Santos",
         role: "Proprietária",
         text: "Excelente serviço técnico e atendimento. Os prazos são cumpridos à risca e a qualidade do serviço é impecável. Recomendo fortemente.",
-        image: "/testimonial2.jpg",
+        image: "https://randomuser.me/api/portraits/women/44.jpg",
         rating: 5
     },
     {
@@ -225,7 +225,7 @@ const testimonials: TestimonialType[] = [
         company: "Construtora Oliveira",
         role: "Gerente de Manutenção",
         text: "Trabalho impecável na retífica dos motores da nossa frota de caminhões. A expertise da equipe e a tecnologia utilizada são diferenciais únicos.",
-        image: "/testimonial3.jpg",
+        image: "https://randomuser.me/api/portraits/men/52.jpg",
         rating: 5
     },
     {
@@ -233,7 +233,7 @@ const testimonials: TestimonialType[] = [
         company: "Logística Express",
         role: "Coordenador de Operações",
         text: "Centro de referência em retífica de motores. O laboratório Bosch e a equipe técnica são excepcionais. Parceria de confiança há mais de 10 anos.",
-        image: "/testimonial4.jpg",
+        image: "https://randomuser.me/api/portraits/men/67.jpg",
         rating: 5
     },
     {
@@ -241,7 +241,7 @@ const testimonials: TestimonialType[] = [
         company: "Frota & Cia",
         role: "Diretora Executiva",
         text: "Serviço de excelência e suporte técnico incomparável. A Motopar é, sem dúvida, a melhor retificadora do Paraná.",
-        image: "/testimonial5.jpg",
+        image: "https://randomuser.me/api/portraits/women/65.jpg",
         rating: 5
     }
 ];

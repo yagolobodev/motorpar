@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#221E1F"/>
+  <!-- Engrenagem externa -->
+  <g transform="translate(256,256)">
+    <path d="M0,-200 L30,-180 L30,-140 L60,-130 L80,-160 L110,-140 L100,-110 L120,-85 L155,-95 L165,-60 L140,-40 L145,-10 L180,0 L180,35 L145,45 L140,75 L165,95 L155,130 L120,120 L100,145 L110,175 L80,195 L60,165 L30,175 L30,210 L0,220 L-30,210 L-30,175 L-60,165 L-80,195 L-110,175 L-100,145 L-120,120 L-155,130 L-165,95 L-140,75 L-145,45 L-180,35 L-180,0 L-145,-10 L-140,-40 L-165,-60 L-155,-95 L-120,-85 L-100,-110 L-110,-140 L-80,-160 L-60,-130 L-30,-140 L-30,-180 Z" fill="#FFF100" opacity="0.95"/>
+    <!-- Circulo interno -->
+    <circle cx="0" cy="10" r="90" fill="#221E1F"/>
+    <!-- Pistão estilizado -->
+    <rect x="-25" y="-50" width="50" height="80" rx="6" fill="#FFF100"/>
+    <rect x="-35" y="30" width="70" height="15" rx="3" fill="#FFF100"/>
+    <rect x="-35" y="-5" width="70" height="8" rx="2" fill="#FFF100" opacity="0.6"/>
+    <rect x="-35" y="-25" width="70" height="8" rx="2" fill="#FFF100" opacity="0.6"/>
+    <circle cx="0" cy="55" r="8" fill="#221E1F"/>
+  </g>
+</svg>
